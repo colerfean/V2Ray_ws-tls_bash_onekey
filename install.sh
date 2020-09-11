@@ -180,7 +180,7 @@ v2ray_install(){
     fi
 
     mkdir -p /root/v2ray && cd /root/v2ray
-    wget  --no-check-certificate install-release.sh
+    wget  --no-check-certificate https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh
 
     ## wget http://install.direct/go.sh
     
