@@ -180,12 +180,13 @@ v2ray_install(){
     fi
 
     mkdir -p /root/v2ray && cd /root/v2ray
-    wget  --no-check-certificate https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh
-
+    wget https://raw.githubusercontent.com/mikewubox/v2ray/master/go.sh
+    wget https://github.com/mikewubox/v2ray/raw/master/v2ray427/v2ray-linux-64.zip 
     ## wget http://install.direct/go.sh
-    
-    if [[ -f install-release.sh ]];then
-        bash install-release.sh --force
+    chmod 777 go.sh
+    chmod 777 v2ray-linux-64.zip
+    if [[ -f go.sh ]];then
+        ./go.sh --local v2ray-linux-64.zip
         judge "安装 V2ray"
     else
         echo -e "${Error} ${RedBG} V2ray 安装文件下载失败，请检查下载地址是否可用 ${Font}"
